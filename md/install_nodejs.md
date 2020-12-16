@@ -6,19 +6,19 @@
 
 웹 브라우저에서  **URL: http://nodejs.org** 을 열어 **LTS** ( Long Term Supported ) 버전을 선택하여 다운로드한다.
 
-<img src="img\image-20201216181543937.png" alt="image-20201216181543937" style="zoom:60%;" />  <img src="img\image-20201216181618831.png" alt="image-20201216181618831" style="zoom:60%;" />
+<img src="img\image-20201216181543937.png"  width="49.4%" />  <img src="img\image-20201216181618831.png"  width="49.4%" />
 
 ##### 2. 설치파일 실행
 
-<img src="img\image-20201216183405353.png" alt="image-20201216183405353" style="zoom: 48.75%;" />  <img src="img\image-20201216183558608.png" alt="image-20201216183558608" style="zoom:48.75%;" />
+<img src="img\image-20201216183405353.png"  width="49%" />  <img src="img\image-20201216183558608.png"  width="49%" />
 
-<img src="img\image-20201216235811765.png" alt="image-20201216235811765" style="zoom:48.75%;" />  <img src="img\image-20201216235920271.png" alt="image-20201216235920271" style="zoom:48.75%;" />
+<img src="img\image-20201216235811765.png"  width="49%" />  <img src="img\image-20201216235920271.png"  width="49%" />
 
 현재 **PC** 에 **Python** 과  **Visual Studio & C++** 컴파일러가 이미 설치되어 있다면 오른쪽 아래 그림의 **Tools for Native Module** 설치과정의 체크박스를 선택하지 않는다.  
 
-<img src="img\image-20201217000042460.png" alt="image-20201217000042460" style="zoom:47.5%;" />  <img src="img\image-20201217000318545.png" alt="image-20201217000318545" style="zoom:48.75%;" />
+<img src="img\image-20201217000042460.png"  width="49%" />  <img src="img\image-20201217000318545.png"  width="49%" />
 
-<img src="img\image-20201217000433572.png" alt="image-20201217000433572" style="zoom:48.75%;" />  <img src="img\image-20201217000515702.png" alt="image-20201217000515702" style="zoom:48.75%;" />
+<img src="img\image-20201217000433572.png"  width="49%" />  <img src="img\image-20201217000515702.png"  width="49%" />
 
 ##### 3. 설치 확인 및 Express.js 설치
 

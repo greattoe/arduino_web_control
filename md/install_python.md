@@ -14,9 +14,9 @@
 
 아래 그림의 체크박스를 선택해야 파이썬이 설치된 경로가 시스템 환경변수에 등록된다.
 
-<img src="img\image-20201217012201787.png" alt="image-20201217012201787" style="zoom:39%;" />  <img src="img\image-20201217012247929.png" alt="image-20201217012247929" style="zoom:39%;" />
+<img src="img\image-20201217012201787.png"  width="49%" />  <img src="img\image-20201217012247929.png"  width="49%" />
 
 아래 그림의 **Disable path length limit**( 시스템 환경변수에 등록되는 경로의 길이제한 해제 )을 클릭한 후,  **<u>C</u>lose** 버튼을 클릭한다. 
 
-<img src="img\image-20201217012502085.png" alt="image-20201217012502085" style="zoom:39%;" />  <img src="img\image-20201217012544161.png" alt="image-20201217012544161" style="zoom:39%;" />
+<img src="img\image-20201217012502085.png"  width="49%" />  <img src="img\image-20201217012544161.png"  width="49%" />
 
