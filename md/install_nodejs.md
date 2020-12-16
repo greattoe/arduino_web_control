@@ -24,7 +24,7 @@
 
 다음 그림과 같이 시작 메뉴의 알파벳 **N** 항목에서 **Node.js** 프로그램 그룹을 찾아  **Command Prompt for Node.js** 를 연다. 
 
-![image-20201217003919596](img\image-20201217003919596.png)
+<img src="img\image-20201217003919596.png" />
 
 **설치된 node.js 버전 확인.** 
 
@@ -60,4 +60,4 @@ C:\Users\user01>  npm install -g express-generator
 
 3. 위 1, 2번 항목에 모두 해당할 경우, 아래 그림의 **Install Additional Tools for Node.js** 를 실행한다.
 
-   ![image-20201217010240669](img\image-20201217010240669.png)
+   <img src="./img/image-20201217010240669.png" />
