@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang=ko>
+  <head>
+    <title>Control LED on Arduino</title>
+    <link rel="stylesheet" href="./stylesheets/style.css">
+  </head>
+  
+  <body> 
+    <table border="0">
+      <tr>
+        <td colspan="4"><h2> Control LED on Arduino </h2></td>
+      </tr>
+      <tr>
+        <td rowspan="4" width="40"> &nbsp; </td>
+        <td rowspan="4" width="60"><img src="./images/offRed.gif" id="ld"></td>
+        <td rowspan="4" width="25"></td>
+        <td> &nbsp; </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/led_on" target="response"><div onClick="led_on()">Turn On </div></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="/led_off" target="response"><div onClick="led_off()">Turn Off</div></a>
+        </td>
+      </tr>
+      <tr>
+        <td> &nbsp; </td>
+      </tr>
+    </table>
+    
+    <table border="0">
+      <tr>
+        <td rowspan="2">Status Message: </br> &nbsp;</br> &nbsp;</td>
+        <td>
+          <iframe src="about:blank" width="129" height="35" frameborder="0"
+          marginwidth="0" marginheight="0" scrolling="no" name="response"></iframe>
+          <p></p>
+        </td>
+      </tr>
+      <tr>
+        <td> &nbsp; </td>
+      </tr>
+    </table>
+    
+    <script src="javascripts/jquery-1.12.4.min.js"></script>
+    <!-- script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script -->
+    <script>
+      function led_on(){
+        document.getElementById("ld").src = "./images/onRed.gif";
+      }
+      
+      function led_off(){
+        document.getElementById("ld").src = "./images/offRed.gif";
+      }
+    </script>
+  </body>
+</html>
