@@ -98,4 +98,4 @@ listening on *:3000
 
 웹브라우저에서 URL: http://localhost:3000/을 열어 동작 확인
 
-<img src="md/img/image-20201217035612901.png" alt="image-20201217035612901" style="zoom:52.2%;" />  <img src="md/img/image-20201217035647657.png" alt="image-20201217035647657" style="zoom:52.2%;" />
+<img src="md/img/image-20201217035612901.png" alt="image-20201217035612901" style="zoom:52%;" />  <img src="md/img/image-20201217035647657.png" alt="image-20201217035647657" style="zoom:52%;" />
