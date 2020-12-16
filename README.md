@@ -11,6 +11,8 @@ node.js 로 작성한 웹서버를 통해 PC 에 연결된 아두이노 보드�
 
 ![image-20201217003919596](md/img/image-20201217003919596.png)
 
+
+
 **Express.js**  프레임워크를 이용해 웹 어플리케이션 **ledUno** 생성
 
 ```
@@ -30,7 +32,7 @@ C:\Users\user01\ledUno> npm install
 C:\Users\user01\ledUno> npm install serialport --save
 ```
 
-현재 화면 상단 오른쪽 <img src="md/img/image-20201217020612483.png" alt="image-20201217003919596" style="zoom:40%;" /> 버튼을 클릭하여 코드를 다운로드 후, 압축 해제하면 2개의 폴더( `code4arduino` ,  `public` )와 `app.js` 파일을 찾을 수 있을 것이다.  
+현재 화면 상단 오른쪽 <img src="md/img/image-20201217020612483.png"  width="9%" /> 버튼을 클릭하여 코드를 다운로드 후, 압축 해제하면 2개의 폴더( `code4arduino` ,  `public` )와 `app.js` 파일을 찾을 수 있을 것이다.  
 
 그 중에서 `public` 폴더와 `app.js` 파일을 앞서 **Express.js** 로 만든 웹어플리케이션 **ledUno** 폴더의  `public` 폴더와 `app.js` 파일에 덮어씌운다.
 
@@ -62,9 +64,7 @@ listening on *:3000
 
 웹브라우저에서 URL: http://localhost:3000/ 을 열어 동작 확인
 
-<img src="./md/img/image-20201217033305331.png" width="50%" /> 
-
-<img src="md/img/image-20201217033305331.png" alt="image-20201217033305331" style="zoom:52.2%;" />  <img src="md/img/image-20201217033348170.png" alt="image-20201217033348170" style="zoom:52.2%;" />
+ <img src="./md/img/image-20201217033305331.png" width="49.2%" />  <img src="./md/img/image-20201217033348170.png"  width="49.2%" />
 
 
 
@@ -82,7 +82,7 @@ listening on *:3000
 
 웹브라우저에서 URL: http://localhost:3000/ 을 열어 동작 확인
 
-<img src="md/img/image-20201217035247954.png" alt="image-20201217035247954" style="zoom:52.2%;" />  <img src="md/img/image-20201217035330126.png" alt="image-20201217035330126" style="zoom:52.2%;" />
+<img src="./md/img/image-20201217035247954.png"  width="49.2%" />  <img src="./md/img/image-20201217035330126.png"  width="49.2%" />
 
 
 
@@ -100,4 +100,4 @@ listening on *:3000
 
 웹브라우저에서 URL: http://localhost:3000/ 을 열어 동작 확인
 
-<img src="md/img/image-20201217035612901.png" alt="image-20201217035612901" style="zoom:52%;" />  <img src="md/img/image-20201217035647657.png" alt="image-20201217035647657" style="zoom:52%;" />
+<img src="./md/img/image-20201217035612901.png"  width="49.2%" />  <img src="./md/img/image-20201217035647657.png"  width="49.2%" />
