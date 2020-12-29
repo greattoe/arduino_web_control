@@ -6,7 +6,7 @@
 
 웹브라우저에서 **URL : http://www.python.org/downloads** 을 연 후, 다음 그림에 표시된 **'Download Python 3.9.1'** 버튼을 클릭하여 설치파일을 다운로드 한다.
 
-![image-20201217011414883](img\image-20201217011414883.png)
+<img src="./img/image-20201217011414883.png" />
 
 ##### 2. 설치파일 실행
 
