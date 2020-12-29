@@ -56,7 +56,7 @@ C:\Users\user01>  npm install -g express-generator
 
 1. 에러 메세지 중에 `Python27` ,  `Python37`  같은 문구가 반복해서 나올경우, [파이썬을 설치](install_python.md)한다.
 
-2. 에러 메세지 중에 `VS2013` 이 나타난 경우, [**Visual Studio** + **C++ 개발도구**](./install_vsstudio.md) 를 설치한다.
+2. 에러 메세지 중에 `VS2013` 이 나타난 경우, [**Visual Studio** & **C++ 개발도구**](./install_vsstudio.md) 를 설치한다.
 
 3. 위 1, 2번 항목에 모두 해당할 경우, 아래 그림의 **Install Additional Tools for Node.js** 를 실행한다.
 
