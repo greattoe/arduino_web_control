@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 const SerialPort = require('serialport');
-const sp = new SerialPort('COM2', {
+const sp = new SerialPort('COM4', {
   baudRate: 9600
 });
 
