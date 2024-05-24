@@ -1,97 +1,44 @@
-var express  = require('express');
-
-var app      = express();
-
-//var app      = require('express')();
-
- 
-
-//var http     = require('http');
-
-//var server   = http.Server(app);
+var express = require('express');
+var app = express();
 
 var http     = require('http').Server(app);
-
- 
-
-//var socketio = require('socket.io');
-
-//var io       = socketio(server);
-
 var io       = require('socket.io')(http);
-
- 
-
-const path = require('path');
-
- 
 
 var SerialPort = require('serialport').SerialPort;
 
 var ReadlineParser = require('@serialport/parser-readline').ReadlineParser;
 
 var parsers    = SerialPort.parsers;
-
-var sp = new SerialPort( {
-
-  path:'/dev/ttyUSB0',
-
-  baudRate: 9600
-
-});
-
-var parser     = sp.pipe(new ReadlineParser({
-
-  delimiter: '\r\n'
-
-}));
-
- 
-
- 
-
- 
-
-var port = 3000;
-
- 
-
-sp.pipe(parser);
-
- 
-
-sp.on('open', () => console.log('Port open'));
-
- 
-
-parser.on('data', function(data)
-
+var sp = new SerialPort( 
 {
 
-	console.log(data.toString());
+  path: 'COM5',
 
-	if(data.substring(0,3) == "led"){
+  baudRate: 9600,
+});
 
-		if(data.substring(3,4) == "1")	ledStatus = "on";
+const parser = sp.pipe(new ReadlineParser({ delimiter: '\r\n' }));
 
-		else							ledStatus = "off";
+sp.on('open', () => console.log('Port open'));
+var ledStatus ="";
+parser.on('data', function (data) {
+  var rcv = data.toString();
+  ////////////////////////////////////////////////////////
+  if (rcv.substring(0, 3) == 'led'){
 
-		io.emit('led', ledStatus);
-
+		if(rcv.substring(3,4) == "1")	ledStatus = "on";
+		else							ledStatus = "off";  
+		}
 		console.log('led status: ' + ledStatus);
-
-	}
-
-	else if(data.substring(0,3) == "adc"){
-
-		adcValue = data.substring(3);
-
-		io.emit('adc', adcValue);
-
-		console.log('adc value: ' + adcValue);
-
-	}
-
+		io.emit('led', ledStatus);
+		
+  //////////////////////////////////////////////////////// case of starting with "led"
+  if (rcv.substring(0, 3) == 'adc'){
+	  var adc = parseInt(rcv.substring(3));
+	  console.log('adc:',adc);
+	  io.emit('adc', adc);
+  //////////////////////////////////////////////////////// case of starting with "adc"
+  }
 });
 
  
@@ -99,7 +46,6 @@ parser.on('data', function(data)
 app.get('/led_on',function(req,res)
 
 {
-
 	sp.write('led1\n\r', function(err){
 
 		if (err) {
@@ -123,7 +69,6 @@ app.get('/led_on',function(req,res)
 app.get('/led_off',function(req,res)
 
 {
-
 	sp.write('led0\n\r', function(err){
 
 		if (err) {
@@ -142,14 +87,9 @@ app.get('/led_off',function(req,res)
 
 });
 
- 
-
 app.use(express.static(__dirname + '/public'));
 
- 
-
-http.listen(port, function() {  // server.listen(port, function() {
-
-    console.log('listening on *:' + port);
-
+const port = 3000;
+http.listen(port, function () {
+  console.log('Server listening on http://localhost:' + port);
 });
