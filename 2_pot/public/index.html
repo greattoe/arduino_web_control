@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang=ko>
+
+<head>
+    <style>
+		#canvas { border: 1px solid lightgrey; }
+        body { padding: 25px;  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif; }
+        iframe { overflow: hidden; }
+        #title { font-weight: bold;  font-size: 12.5px; }
+        a { color: #00B7FF; }
+    </style>
+	<title>Communicate with Arduino</title>
+</head>
+
+<body>
+	<table border="0">
+        <tr><td colspan="2" id="title">Communicate with Arduino</td></tr>
+        <tr>
+            <td rowspan="4" width="70"> &nbsp; <img id="imgLed" src="images/off.gif"></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+			<td><a id="ledOn" href="/led_on" target="iframe">Turn On LED</a></td>
+        </tr>
+        <tr>
+			<td><a id="ledOff" href="/led_off" target="iframe">Turn Off LED</a></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+		<tr><td>LED State &nbsp; : </td><td id="led"></td></tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+        <tr><td colspan="2"><canvas id="canvas" width="160" height="20"></canvas></td></tr>
+        <tr><td>ADC Value : </td><td id="adc"></td></tr>
+	</table>
+    
+    <iframe src="about:blank" width="0" height="0" frameborder="0" border="0" marginwidth="0" marginheight="0" name="iframe"></iframe>
+    
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	
+    <script>
+	
+	
+	$(document).ready(function() 
+	{
+		$(function()
+        {
+            var val    = 0;
+            var oldval = 0;
+            
+			var socket = io();
+				
+			socket.on('led', function( ledStatus ){
+				$('#led').text(ledStatus);
+				console.log(ledStatus);
+				if(ledStatus=='on')
+					$('#imgLed').attr('src', "images/on.gif");
+				else
+					$('#imgLed').attr('src', "images/off.gif");
+			});
+            
+			socket.on('adc', function( adcValue ){
+				$('#adc').text(adcValue);
+				
+				oldval = val;
+				// val = parseInt(adcValue);
+				val = parseInt(adcValue)/6;
+				
+				var canvas = document.getElementById('canvas');
+						
+				if (canvas.getContext){
+					var ctx = canvas.getContext('2d');
+					
+					if( val != oldval ) {
+					//*	// 512 x 20
+						ctx.fillStyle = 'rgb(0, 200, 0)';
+						ctx.fillRect(0,   0,    val, 20);
+						ctx.fillStyle = 'rgb(255, 255, 255)';
+						ctx.fillRect(val, 0, 1024/6, 20);
+					//*/
+					/*  //  20 x 512
+						ctx.fillStyle = 'rgb(255, 255, 255)';
+						ctx.fillRect(0, 0, 20, val);
+						ctx.fillStyle = 'rgb(0, 200, 0)';
+						ctx.fillRect(0, 512-val, 20, val);
+					*/
+					}
+				}
+			});
+		});
+	});
+	</script>
+
+</body>
+</html>
