@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang=ko>
+
+<head>
+    <style>
+		#canvas { border: 1px solid lightgrey; }
+        body { padding: 25px;  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif; }
+        iframe { overflow: hidden; }
+        #title { font-weight: bold;  font-size: 12.5px; }
+        a { color: #00B7FF; }
+    </style>
+	<title>Communicate with Arduino</title>
+	
+</head>
+
+<body>
+    <table border = '1' width='360px' align='center'>
+		<tr height='40'>
+			<td width='100px'>Temperature: </td>	
+			<td id="temp">&nbsp;</td>
+		</tr>
+		<tr height='40'>
+			<td>Humidity: </td>	
+			<td id="humi">&nbsp;</td>
+		</tr>
+	</table>
+
+
+	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+    <script>	
+		$(document).ready(function(){
+			$(function()
+			{           
+				var socket = io();
+					
+				socket.on('temp', function( temp ){
+					$('#temp').text(temp);
+					console.log("temp : " + temp);
+					
+				});
+				
+				socket.on('humi', function( humi ){
+					$('#humi').text(humi);
+					console.log("humi + " + humi);
+					
+				});
+			});
+		});
+	</script>
+</body>
+</html>
