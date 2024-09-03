@@ -10,7 +10,7 @@ const SerialPort = require('serialport').SerialPort;
 
 const sp = new SerialPort( {
 
-  path:'COM4',
+  path:'COM5',
 
   baudRate: 9600
 });
