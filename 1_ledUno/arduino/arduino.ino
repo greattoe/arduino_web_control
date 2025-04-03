@@ -1,16 +1,11 @@
-const int pinLed = 13;
+const int pinVR = A0;
 
 void setup() {
-  pinMode(pinLed,OUTPUT);
-  digitalWrite(pinLed,LOW);
   Serial.begin(9600);
 }
-
 void loop() {
-  if(Serial.available() > 0) {
-    unsigned char ch = Serial.read();
-    if     (ch == '1') digitalWrite(pinLed,HIGH);
-    else if(ch == '0') digitalWrite(pinLed,LOW );
-    else;
-  }
+  int adc_res =analogRead(pinVR);
+  Serial.print("adc = ");
+  Serial.println(adc_res);
+  delay(100);
 }
